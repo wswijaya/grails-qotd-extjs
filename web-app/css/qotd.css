@@ -1,0 +1,17 @@
+body {
+	font: Verdana, Helvetica;
+	margin: 0px;
+}
+#quote q	{
+	font-size: 2.5em;
+	display: block;
+	margin: .5em;
+	padding: .5em;
+	background: url(../images/background.png) repeat-x;
+	border: 1px dotted black;
+}
+#quote p   {
+	font-size: 1.5em;
+	text-align:right;
+	margin-right: 2em;
+}

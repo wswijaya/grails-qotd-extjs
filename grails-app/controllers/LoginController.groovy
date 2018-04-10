@@ -122,11 +122,7 @@ class LoginController {
 	 * The Ajax success redirect url.
 	 */
 	def ajaxSuccess = {
-		if(request.xhr) {
-			render([success: true, username: springSecurityService.authentication.name] as JSON)
-			return
-		}	
-		redirect uri: ‘/app’
+		render([success: true, username: springSecurityService.authentication.name] as JSON)
 	}
 
 	/**
@@ -140,7 +136,11 @@ class LoginController {
 	 * The ExtJS Authentication success handler
 	 */
 	def authSucccessExtJs = {
-		render([success: true, username: springSecurityService.authentication.name] as JSON)
+		if(request.xhr) {
+			render([success: true, username: springSecurityService.authentication.name] as JSON)
+			return
+		}	
+		redirect uri: ‘/app’
 	}
 	
 	/**
